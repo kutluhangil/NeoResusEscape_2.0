@@ -13,6 +13,7 @@ import { InteractionPrompt } from '@/components/ui/hud/InteractionPrompt'
 import { MidpointCelebration } from '@/components/ui/effects/MidpointCelebration'
 import { VirtualJoystick, MobileInteractButton } from '@/components/ui/mobile/VirtualJoystick'
 import { AudioToggle } from '@/components/ui/hud/AudioToggle'
+import { PauseMenu } from '@/components/ui/hud/PauseMenu'
 
 // Three.js scene — client only (no SSR)
 const Scene = dynamic(() => import('./three/Scene').then((m) => m.Scene), {
@@ -43,6 +44,7 @@ export function GameView() {
       <VirtualJoystick />
       <MobileInteractButton />
       <AudioToggle />
+      <PauseMenu />
 
       {/* Pointer lock instruction */}
       {phase === 'playing' && <ClickToLock />}
