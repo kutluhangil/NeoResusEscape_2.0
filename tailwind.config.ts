@@ -21,9 +21,9 @@ const config: Config = {
         'medical-red':     '#FF2D2D',
       },
       fontFamily: {
-        geist: ['Geist', 'monospace'],
-        inter: ['Inter', 'sans-serif'],
-        mono: ['JetBrains Mono', 'monospace'],
+        geist: ['var(--font-mono)', 'ui-monospace', 'monospace'],
+        inter: ['var(--font-inter)', 'system-ui', 'sans-serif'],
+        mono: ['var(--font-mono)', 'ui-monospace', 'monospace'],
       },
       animation: {
         'breathe': 'breathe 2s ease-in-out infinite',

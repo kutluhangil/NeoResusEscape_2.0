@@ -9,10 +9,12 @@ import { CeilingLEDs } from './lighting/CeilingLEDs'
 import { MonitorGlow } from './lighting/MonitorGlow'
 import { EnvironmentSetup } from './lighting/EnvironmentSetup'
 import { FPSController } from './player/FPSController'
+import { CinematicCamera } from './player/CinematicCamera'
 import { HotspotManager } from './interaction/HotspotManager'
 import { DoorKeypad } from './interaction/DoorKeypad'
 import { DustParticles } from './effects/DustParticles'
 import { PostProcessing } from './effects/PostProcessing'
+import { AmbientAudio } from './audio/AmbientAudio'
 
 export function Scene() {
   return (
@@ -38,6 +40,8 @@ export function Scene() {
           <DoorKeypad />
           <DustParticles />
           <PostProcessing />
+          <AmbientAudio />
+          <CinematicCamera />
           <FPSController />
         </Suspense>
       </Canvas>

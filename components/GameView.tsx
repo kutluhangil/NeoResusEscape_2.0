@@ -10,6 +10,9 @@ import { HintVideoPlayer } from '@/components/ui/question/HintVideoPlayer'
 import { KeypadModal } from '@/components/ui/door/KeypadModal'
 import { DoorOpeningCinematic } from '@/components/ui/door/DoorOpeningCinematic'
 import { InteractionPrompt } from '@/components/ui/hud/InteractionPrompt'
+import { MidpointCelebration } from '@/components/ui/effects/MidpointCelebration'
+import { VirtualJoystick, MobileInteractButton } from '@/components/ui/mobile/VirtualJoystick'
+import { AudioToggle } from '@/components/ui/hud/AudioToggle'
 
 // Three.js scene — client only (no SSR)
 const Scene = dynamic(() => import('./three/Scene').then((m) => m.Scene), {
@@ -36,6 +39,10 @@ export function GameView() {
       <HintVideoPlayer />
       <KeypadModal />
       <DoorOpeningCinematic />
+      <MidpointCelebration />
+      <VirtualJoystick />
+      <MobileInteractButton />
+      <AudioToggle />
 
       {/* Pointer lock instruction */}
       {phase === 'playing' && <ClickToLock />}

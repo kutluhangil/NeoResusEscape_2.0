@@ -5,6 +5,7 @@ import { useFrame, useThree } from '@react-three/fiber'
 import { PointerLockControls } from '@react-three/drei'
 import * as THREE from 'three'
 import { useGameStore } from '@/lib/store/gameStore'
+import { getJoystickState } from '@/components/ui/mobile/VirtualJoystick'
 
 const WALK_SPEED = 1.4
 const RUN_SPEED = 2.6
@@ -66,10 +67,11 @@ export function FPSController() {
     forward.normalize()
     right.crossVectors(forward, new THREE.Vector3(0, 1, 0))
 
-    if (keys['KeyW'] || keys['ArrowUp']) direction.add(forward)
-    if (keys['KeyS'] || keys['ArrowDown']) direction.sub(forward)
-    if (keys['KeyA'] || keys['ArrowLeft']) direction.sub(right)
-    if (keys['KeyD'] || keys['ArrowRight']) direction.add(right)
+    const joystick = getJoystickState()
+    if (keys['KeyW'] || keys['ArrowUp'] || joystick.y < -0.2) direction.add(forward)
+    if (keys['KeyS'] || keys['ArrowDown'] || joystick.y > 0.2) direction.sub(forward)
+    if (keys['KeyA'] || keys['ArrowLeft'] || joystick.x < -0.2) direction.sub(right)
+    if (keys['KeyD'] || keys['ArrowRight'] || joystick.x > 0.2) direction.add(right)
 
     const isMoving = direction.lengthSq() > 0
     isMovingRef.current = isMoving

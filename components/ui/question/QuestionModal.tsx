@@ -6,6 +6,7 @@ import { QUESTIONS } from '@/lib/data/questions'
 import { GlassPanel } from '@/components/shared/GlassPanel'
 import { Button } from '@/components/shared/Button'
 import { formatTime } from '@/lib/utils/timeFormat'
+import { ProceduralAudio } from '@/lib/hooks/useProceduralAudio'
 
 export function QuestionModal() {
   const { activeQuestionId, answerCorrect, answerWrong, closeQuestion, phase } = useGameStore()
@@ -36,16 +37,19 @@ export function QuestionModal() {
   const handleSelect = (optionId: string) => {
     if (selected) return
     setSelected(optionId)
+    ProceduralAudio.click()
 
     setTimeout(() => {
       if (optionId === question?.correctOptionId) {
+        ProceduralAudio.correct()
         answerCorrect(activeQuestionId!)
       } else {
+        ProceduralAudio.wrong()
         setShaking(true)
         setTimeout(() => setShaking(false), 500)
         setTimeout(() => answerWrong(), 600)
       }
-    }, 400)
+    }, 200)
   }
 
   if (!question || (phase !== 'question')) return null

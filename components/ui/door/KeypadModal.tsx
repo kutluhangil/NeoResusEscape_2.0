@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import { useGameStore, getDoorCode } from '@/lib/store/gameStore'
 import { DOOR_CODE } from '@/lib/data/questions'
 import { GlassPanel } from '@/components/shared/GlassPanel'
+import { ProceduralAudio } from '@/lib/hooks/useProceduralAudio'
 
 const MAX_ATTEMPTS = 3
 
@@ -24,10 +25,12 @@ export function KeypadModal() {
 
   const handlePress = (digit: string) => {
     if (locked || input.length >= 10) return
+    ProceduralAudio.keypadPress()
     setInput((prev) => prev + digit)
   }
 
   const handleBackspace = () => {
+    ProceduralAudio.click()
     setInput((prev) => prev.slice(0, -1))
   }
 
@@ -36,9 +39,11 @@ export function KeypadModal() {
     const correctCode = getDoorCode(collectedDigits)
 
     if (input === correctCode) {
+      ProceduralAudio.unlock()
       setFlash('success')
       setTimeout(() => setPhase('door_opening'), 1200)
     } else {
+      ProceduralAudio.wrong()
       const newAttempts = attempts + 1
       setAttempts(newAttempts)
       setFlash('error')
