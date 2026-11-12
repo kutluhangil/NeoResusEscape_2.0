@@ -1,310 +1,64 @@
 <div align="center">
 
-<br />
+<img src="docs/media/hero.svg" alt="NeoRescue — a 3D escape room that teaches neonatal resuscitation" width="100%">
 
-<img src="https://img.shields.io/badge/NeoRescue-v1.0-0A0E1A?style=for-the-badge&logoColor=white" alt="version" />
-<img src="https://img.shields.io/badge/Next.js-14-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" alt="nextjs" />
-<img src="https://img.shields.io/badge/Three.js-3D-000000?style=for-the-badge&logo=threedotjs&logoColor=white" alt="threejs" />
-<img src="https://img.shields.io/badge/TypeScript-Strict-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="typescript" />
-<img src="https://img.shields.io/badge/TailwindCSS-v3-38BDF8?style=for-the-badge&logo=tailwindcss&logoColor=white" alt="tailwind" />
-<img src="https://img.shields.io/badge/Vercel-Deployed-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="vercel" />
+<p>
+  <a href="https://neo-resus-escape-2-0.vercel.app"><img alt="Live" src="https://img.shields.io/badge/live-enter%20the%20ambulance-ff4d5e?style=for-the-badge&labelColor=070a0c"></a>
+  <img alt="R3F" src="https://img.shields.io/badge/R3F-3D%20FPS-3ad1c4?style=for-the-badge&labelColor=070a0c">
+  <img alt="Web Audio" src="https://img.shields.io/badge/sound-procedural-ffd166?style=for-the-badge&labelColor=070a0c">
+  <img alt="License" src="https://img.shields.io/badge/license-MIT-ff4d5e?style=for-the-badge&labelColor=070a0c">
+</p>
 
-<br /><br />
-
-```text
-███╗   ██╗███████╗ ██████╗ ██████╗ ███████╗███████╗ ██████╗██╗   ██╗███████╗
-████╗  ██║██╔════╝██╔═══██╗██╔══██╗██╔════╝██╔════╝██╔════╝██║   ██║██╔════╝
-██╔██╗ ██║█████╗  ██║   ██║██████╔╝█████╗  ███████╗██║     ██║   ██║█████╗  
-██║╚██╗██║██╔══╝  ██║   ██║██╔══██╗██╔══╝  ╚════██║██║     ██║   ██║██╔══╝  
-██║ ╚████║███████╗╚██████╔╝██║  ██║███████╗███████║╚██████╗╚██████╔╝███████╗
-╚═╝  ╚═══╝╚══════╝ ╚═════╝ ╚═╝  ╚═╝╚══════╝╚══════╝ ╚═════╝ ╚═════╝ ╚══════╝
-```
-
-### **Kilitli Ambulans — Yenidoğan Resüsitasyonu** — Tıp eğitimini oyunlaştıran sinematik FPS kaçış odası.
-
-*Fenerbahçe Üniversitesi Tıp Fakültesi için geliştirilmiştir.*
+<p><em>A web-based 3D first-person escape room that tests medical students on Neonatal Resuscitation Program scenarios.<br>
+You are locked inside an ambulance; every correct answer reveals one digit of the door code.</em></p>
 
 </div>
 
----
+<img src="docs/media/divider.svg" width="100%" alt="">
 
-## ✦ NeoRescue Nedir?
+## How it plays
 
-**NeoRescue**, tıp öğrencilerini bir ambulans içindeki yenidoğan resüsitasyonu (NRP) senaryolarıyla sınayan web tabanlı bir **3D FPS kaçış odası** oyunudur.
+Explore the cabin and inspect ten pieces of medical equipment. Each one opens a clinical case with four options and a hint video. Answer correctly and a digit of the door code appears; collect them all and the keypad unlocks. Instead of a static exam, students practise clinical decisions under time pressure, inside a cinematic space, with a leaderboard for friendly competition.
 
-Oyuncu, kapalı bir ambulansın içinde kilitlidir. Çevredeki 10 tıbbi ekipman noktasını inceleyerek NRP sorularını yanıtlar; her doğru yanıt bir rakamı ortaya çıkarır. Tüm rakamlar toplandığında arka kapıdaki şifreli kilidi açarak ambulanstan çıkabilir.
+| | |
+|---|---|
+| **3D ambulance** | A procedurally built cabin with PBR materials. |
+| **10 NRP cases** | Scenario, four choices, a hint video and a code digit for each. |
+| **Coded door** | Correct answers collect digits; the keypad opens when the code is complete. |
+| **Cinematic intro** | A camera tour, typewriter storytelling and a halfway celebration. |
+| **Procedural sound** | A Web Audio engine with no audio files. |
+| **Mobile controls** | A virtual joystick on the left and an action button on the right. |
+| **Leaderboard** | Persistent local scores with CSV export. |
+| **Post-processing** | Bloom, vignette, chromatic aberration and flickering ceiling LEDs. |
 
-Statik bir sınav yerine, öğrenciler mekan keşfi, zaman baskısı ve sinematik atmosfer içinde klinik karar verme becerilerini pekiştirir. Sıralama tablosu anlık rekabeti mümkün kılar; tüm veriler tarayıcı yerel deposunda tutulur — backend yoktur.
-
----
-
-<details>
-<summary><strong>🇬🇧 English Description</strong></summary>
-
-<br />
-
-**NeoRescue** is a web-based **3D FPS escape room** game that tests medical students on Neonatal Resuscitation Protocol (NRP) scenarios inside a locked ambulance.
-
-The player is trapped inside an ambulance. By examining 10 medical equipment hotspots, they answer NRP questions — each correct answer reveals one digit of the door code. Once all digits are collected, the rear door's keypad can be unlocked.
-
-Instead of a static exam, students reinforce clinical decision-making under time pressure, spatial exploration, and cinematic atmosphere. A real-time leaderboard enables competition; all data lives in browser localStorage — no backend required.
-
-</details>
-
----
-
-## ⚡ Özellikler
-
-| Özellik | Açıklama |
-|---------|----------|
-| 🚑 **3D Ambulans İçi** | Four.js ile tamamen prosedürel inşa edilmiş, PBR materyalli gerçekçi ambulans kabini |
-| 🎯 **10 NRP Sorusu** | Her biri senaryo, 4 seçenek, ipucu videosu ve kapı kodu rakamı içeren klinik vakalar |
-| 🔐 **Şifreli Kapı Sistemi** | Doğru cevaplar rakam toplar; tüm rakamlar tamamlanınca keypad kilidi açılır |
-| 🎬 **Sinematik Açılış** | Giriş kamera turu, typewriter hikaye sunumu ve yarı yol kutlama efekti |
-| 🔊 **Prosedürel Ses** | Web Audio API ile dosyasız ses motoru — ses dosyası olmadan çalışır |
-| 📱 **Mobil Destek** | Sol taraf sanal joystick + sağ taraf E butonu ile tam mobil oynanış |
-| 🏆 **Anlık Sıralama** | LocalStorage tabanlı kalıcı skor tablosu, CSV dışa aktarma desteği |
-| ✨ **Post-Processing** | Bloom, Vignette, ChromaticAberration ve tavan LED flicker efektleri |
-
----
-
-## 🛠️ Teknoloji Yığını
-
-```text
-Framework       →  Next.js 14 (App Router) · TypeScript (strict)
-3D Motor        →  Three.js · React Three Fiber (@react-three/fiber)
-3D Yardımcılar  →  React Three Drei (@react-three/drei)
-Post-FX         →  @react-three/postprocessing (Bloom · Vignette · ChromaticAberration)
-Durum Yönetimi  →  Zustand v5 (persist → LocalStorage)
-UI & Animasyon  →  Tailwind CSS v3 · Framer Motion
-Ses             →  Web Audio API (prosedürel) · Howler.js (dosya tabanlı)
-Yazı Tipleri    →  Inter (UI) · JetBrains Mono (HUD/Keypad)
-Deploy          →  Vercel (Next.js native)
+```mermaid
+flowchart LR
+  I[Intro tour] --> E[Explore cabin · FPS]
+  E --> H[Equipment hotspot] --> Q[NRP case · 4 options]
+  Q -- correct --> D[Code digit]
+  D --> K{All 10?}
+  K -- no --> E
+  K -- yes --> U[Keypad unlocks] --> L[Leaderboard]
 ```
 
----
+<img src="docs/media/divider.svg" width="100%" alt="">
 
-## 📐 Proje Yapısı
+## Türkçe özet
 
-```text
-NeoResusEscape_2.0/
-├── app/
-│   ├── layout.tsx                     # Kök layout, font tanımları, metadata
-│   ├── page.tsx                       # Faz yönlendirici (landing → story → oyun)
-│   └── globals.css                    # CSS değişkenleri, glassmorphism, animasyonlar
-├── components/
-│   ├── GameView.tsx                   # Ana oyun görünümü: 3D sahne + tüm 2D katmanlar
-│   ├── shared/                        # Button, GlassPanel, PageTransition
-│   ├── three/
-│   │   ├── Scene.tsx                  # Canvas kök bileşeni, tüm 3D çocukları barındırır
-│   │   ├── ambulance/
-│   │   │   └── AmbulanceShell.tsx     # Prosedürel ambulans kabini (4×2.2×2.1 m)
-│   │   ├── audio/
-│   │   │   └── AmbientAudio.tsx       # Ambient drone + monitör bip döngüsü
-│   │   ├── effects/
-│   │   │   ├── DustParticles.tsx      # Toz parçacık sistemi
-│   │   │   └── PostProcessing.tsx     # Bloom · Vignette · ChromaticAberration
-│   │   ├── interaction/
-│   │   │   ├── DoorKeypad.tsx         # Arka kapı kilidi, tüm sorular çözülünce aktif
-│   │   │   ├── Hotspot.tsx            # 3 katmanlı hotspot: idle / yakın / çok yakın
-│   │   │   └── HotspotManager.tsx     # 10 hotspot yönetimi, E tuşu, mesafe tespiti
-│   │   ├── lighting/
-│   │   │   ├── CeilingLEDs.tsx        # Tavan LED'leri (flicker efekti)
-│   │   │   ├── EnvironmentSetup.tsx   # Ambient + directional ışıklar
-│   │   │   └── MonitorGlow.tsx        # Monitör yüzeyi kalp atışı pulse
-│   │   └── player/
-│   │       ├── CinematicCamera.tsx    # Giriş kamera turu + 5. cevap kamera sarsıntısı
-│   │       └── FPSController.tsx      # WASD + PointerLock + head bob + sınır kontrolü
-│   └── ui/
-│       ├── door/                      # KeypadModal · DoorOpeningCinematic
-│       ├── effects/                   # MidpointCelebration ("✦ YARI YOL ✦")
-│       ├── hud/                       # HUD · InteractionPrompt · AudioToggle · PauseMenu
-│       ├── landing/                   # LandingScreen
-│       ├── leaderboard/               # LeaderboardTable
-│       ├── mobile/                    # VirtualJoystick · MobileInteractButton
-│       ├── name/                      # NameEntry
-│       ├── question/                  # QuestionModal · CorrectFeedback · WrongFeedback · HintVideoPlayer
-│       ├── results/                   # ResultsScreen
-│       ├── story/                     # StoryIntro (typewriter animasyonu)
-│       └── tutorial/                  # ControlsTutorial
-├── lib/
-│   ├── data/
-│   │   ├── hotspotPositions.ts        # 10 hotspot koordinatı ve etiketleri
-│   │   ├── questions.ts               # 10 NRP sorusu: senaryo · seçenekler · rakam · açıklama
-│   │   └── storyText.ts               # Typewriter metin dizisi
-│   ├── hooks/
-│   │   ├── useAudio.ts                # Dosya tabanlı ses yöneticisi (Howler.js)
-│   │   └── useProceduralAudio.ts      # Web Audio API ses motoru (dosyasız)
-│   ├── store/
-│   │   ├── gameStore.ts               # Ana oyun state makinesi (Zustand persist)
-│   │   └── leaderboardStore.ts        # Sıralama tablosu (LocalStorage, CSV export)
-│   └── utils/
-│       ├── cn.ts                      # Tailwind class birleştirici (clsx)
-│       ├── csvExport.ts               # Skor tablosu CSV dışa aktarma
-│       ├── deviceDetect.ts            # Mobil/masaüstü tespiti
-│       └── timeFormat.ts              # Süre biçimlendirme
-├── public/
-│   ├── images/                        # fbu_logo.svg · og_preview.png
-│   ├── sounds/                        # (opsiyonel) MP3 ses dosyaları
-│   └── videos/hints/                  # (opsiyonel) Vaka ipucu videoları
-├── scripts/
-│   └── generate-og.js                 # OG önizleme görseli oluşturucu
-├── next.config.js
-├── tailwind.config.ts
-└── vercel.json
-```
+**NeoRescue (Kilitli Ambulans)**, tıp öğrencilerini bir ambulansın içinde yenidoğan resüsitasyonu (NRP) senaryolarıyla sınayan web tabanlı bir 3B FPS kaçış odası oyunu. Oyuncu kabindeki 10 tıbbi ekipmanı inceleyip klinik soruları yanıtlıyor; her doğru cevap kapı şifresinin bir rakamını açıyor. Sinematik açılış, dosyasız prosedürel ses, mobil joystick desteği ve sıralama tablosu var.
 
----
+<img src="docs/media/divider.svg" width="100%" alt="">
 
-## 🚀 Başlarken
+## Development
 
-### Gereksinimler
-
-- Node.js `>= 18`
-- npm `>= 9`
-
-### Yerel Geliştirme
-
-```bash
-# Repoyu klonla
-git clone https://github.com/kutluhangil/NeoResusEscape_2.0.git
-cd NeoResusEscape_2.0
-
-# Bağımlılıkları yükle
+```sh
 npm install
-
-# Geliştirme sunucusunu başlat
-npm run dev
-```
-
-Uygulama `http://localhost:3000` adresinde açılır.
-
-### Production Build
-
-```bash
+npm run dev      # http://localhost:3000
 npm run build
-# .next/ dizini oluşturulur → Vercel'e otomatik deploy edilir
 ```
-
----
-
-## 🎮 Oyun Akışı
-
-```
-Landing Screen
-    ↓  "Başla"
-Story Intro  (typewriter — ambulans senaryosu)
-    ↓  otomatik
-Name Entry  (isim girişi)
-    ↓  "Oyuna Başla"
-Controls Tutorial  (WASD · E · ESC · Mobil kontroller)
-    ↓  "Hazırım"
-3D Oyun  ──→  Hotspot'a yaklaş (E)  ──→  Soru Modalı
-                    ↓ Doğru              ↓ Yanlış
-               Correct Feedback     Wrong Feedback
-               (rakam açılır)        (ipucu video)
-                    ↓                    ↓ Tekrar dene
-              10 soru tamamlandı
-                    ↓
-              Keypad Modal  (kapı kodu gir)
-                    ↓  Doğru kod
-              Kapı Açılış Sinematik
-                    ↓
-              Results Screen  (süre · skor · yıldız)
-                    ↓
-              Leaderboard Table
-```
-
----
-
-## ✏️ İçerik Güncelleme Rehberi
-
-### Soruları Değiştirme
-
-`lib/data/questions.ts` dosyasını düzenle. Her soru nesnesi:
-
-```ts
-{
-  id: 1,
-  scenario: "Vaka metni...",          // Klinik senaryo açıklaması
-  question: "Soru metni?",
-  options: [
-    { id: 'a', text: "Seçenek A" },
-    { id: 'b', text: "Seçenek B" },
-    { id: 'c', text: "Seçenek C" },
-    { id: 'd', text: "Seçenek D" },
-  ],
-  correctOptionId: 'b',               // Doğru şık
-  digit: '7',                         // Bu sorunun katkısı (0-9)
-  explanation: "Açıklama metni...",
-  hintVideoUrl: '/videos/hints/case-01-hint.mp4',  // opsiyonel
-}
-```
-
-> **Not:** Kapı kodu, tüm soruların `digit` değerlerinin ID sırasına göre birleşiminden otomatik hesaplanır.
-
-### Opsiyonel Medya Dosyaları
-
-```text
-public/
-├── sounds/
-│   ├── ambient/ambulance_idle.mp3    # Ambulans motor sesi
-│   ├── ambient/monitor_beep.mp3      # EKG bip sesi
-│   ├── ui/click.mp3                  # Tık sesi
-│   ├── ui/correct.mp3                # Doğru cevap
-│   ├── ui/wrong.mp3                  # Yanlış cevap
-│   ├── door/unlock.mp3               # Kilit açılması
-│   └── footsteps/step_01-04.mp3      # Adım sesleri
-└── videos/hints/
-    ├── case-01-hint.mp4              # Vaka 1 ipucu videosu
-    └── ...
-    └── case-10-hint.mp4              # Vaka 10 ipucu videosu
-```
-
-Ses dosyaları mevcut olmadığında prosedürel ses motoru (Web Audio API) otomatik devreye girer.
-
----
-
-## 🔒 Mimari Notlar
-
-| Konu | Uygulama |
-|------|----------|
-| **Backend Yok** | Tüm veri (skor, durum) tarayıcı LocalStorage'da — sunucu gerekmez |
-| **SSR Bypass** | Three.js `<Canvas>` `next/dynamic` + `ssr: false` ile yüklenir |
-| **3D ↔ 2D Köprüsü** | `window.dispatchEvent(CustomEvent)` ile Three.js frame loop → React DOM |
-| **Mobil FPS** | `getJoystickState()` ile VirtualJoystick değerleri FPSController'a beslenir |
-| **Ses Dosyasız** | Web Audio API osilatörleri tüm sesleri programatik üretir |
-| **PBR Materyaller** | Tüm 3D objeler MeshStandardMaterial ile roughness/metalness değerleri taşır |
-
----
-
-## 🗺️ Yol Haritası
-
-- [x] Next.js 14 App Router altyapısı
-- [x] Prosedürel ambulans kabini (AmbulanceShell)
-- [x] 12 tıbbi ekipman 3D modeli
-- [x] FPS kontrolcü (WASD + PointerLock + head bob)
-- [x] 10 hotspot sistemi + kapı keypad mekaniği
-- [x] Soru modalı + doğru/yanlış geri bildirim
-- [x] Prosedürel ses motoru (Web Audio API)
-- [x] Sinematik kamera turu + midpoint kutlaması
-- [x] Mobil sanal joystick desteği
-- [x] Sıralama tablosu (LocalStorage + CSV export)
-- [x] Vercel deployment
-- [ ] Gerçek NRP soru içerikleri (eğitim ekibi güncelleyecek)
-- [ ] Vaka ipucu videoları (10 adet MP4)
-- [ ] Gece/gündüz döngüsü ve dinamik aydınlatma
-- [ ] VR/XR desteği (@react-three/xr — Quest 2)
-- [ ] Çoklu dil desteği (EN/TR)
-
----
 
 <div align="center">
-
-Fenerbahçe Üniversitesi Tıp Fakültesi için özenle geliştirilmiştir.
-
-<br />
-
-*Projeyi faydalı bulduysanız bir ⭐ vermeyi düşünün.*
-
+<br>
+<a href="https://github.com/kutluhangil"><img src="docs/media/signature.svg" width="100%" alt="Built by kutluhangil"></a>
+<sub>For training only · not a substitute for certified NRP instruction.</sub>
 </div>
